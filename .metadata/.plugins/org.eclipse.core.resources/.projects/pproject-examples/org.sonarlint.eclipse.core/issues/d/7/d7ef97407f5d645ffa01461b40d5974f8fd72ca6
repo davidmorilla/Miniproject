@@ -1,0 +1,72 @@
+
+|
+AX8A678un6OR0ua34lN4	java:S121%"Missing curly brace.(„¶áìøÿÿÿÿ2guillermo-roman-diez616508°Í®‡ğ/RCRITICALZ
+CODE_SMELL
+Å
+AX8A5qMqn6OR0ua34k8r
+java:S1319
+"dThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".(îÖ¿2guillermo-roman-diez616508€œš‡ğ/RMINORZ
+CODE_SMELL
+Ê
+AX8A678un6OR0ua34lN7
+java:S1319"dThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".(”Œæìøÿÿÿÿ2guillermo-roman-diez616508°Í®‡ğ/RMINORZ
+CODE_SMELL
+q
+AX8A678un6OR0ua34lN5
+java:S2757&"Was "+=" meant instead?(÷ˆ¨¼2guillermo-roman-diez616508°Í®‡ğ/RMAJORZBUG
+|
+AX8A678un6OR0ua34lN1	java:S121!"Missing curly brace.(°«’çÿÿÿÿÿ2guillermo-roman-diez616508°Í®‡ğ/RCRITICALZ
+CODE_SMELL
+²
+AX8A5qMqn6OR0ua34k8s	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(÷–èøÿÿÿÿ2guillermo-roman-diez616508€œš‡ğ/RMINORZ
+CODE_SMELL
+®
+AX8A5qMqn6OR0ua34k8i	java:S100
+"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îÖ¿2guillermo-roman-diez616508€œš‡ğ/RMINORZ
+CODE_SMELL
+|
+AX8A5qMqn6OR0ua34k8n	java:S121"Missing curly brace.(„¶áìøÿÿÿÿ2guillermo-roman-diez616508€œš‡ğ/RCRITICALZ
+CODE_SMELL
+‘
+AX8A5qMqn6OR0ua34k8p
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ2guillermo-roman-diez616508€œš‡ğ/RMINORZ
+CODE_SMELL
+»
+AX8A678un6OR0ua34lN0
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(”Œæìøÿÿÿÿ2guillermo-roman-diez616508°Í®‡ğ/RCRITICALZ
+CODE_SMELL
+×
+AX8A678un6OR0ua34lN6
+java:S1319"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(”Œæìøÿÿÿÿ2guillermo-roman-diez616508°Í®‡ğ/RMINORZ
+CODE_SMELL
+|
+AX8A5qMqn6OR0ua34k8k	java:S121"Missing curly brace.(°«’çÿÿÿÿÿ2guillermo-roman-diez616508€œš‡ğ/RCRITICALZ
+CODE_SMELL
+q
+AX8A5qMqn6OR0ua34k8o
+java:S2757"Was "+=" meant instead?(÷ˆ¨¼2guillermo-roman-diez616508€œš‡ğ/RMAJORZBUG
+¶
+AX8A5qMqn6OR0ua34k8j
+java:S3776
+"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(îÖ¿2guillermo-roman-diez616508€œš‡ğ/RCRITICALZ
+CODE_SMELL
+|
+AX8A5qMqn6OR0ua34k8l	java:S121"Missing curly brace.(¡ĞÜÙÿÿÿÿÿ2guillermo-roman-diez616508€œš‡ğ/RCRITICALZ
+CODE_SMELL
+³
+AX8A678un6OR0ua34lNz	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”Œæìøÿÿÿÿ2guillermo-roman-diez616508°Í®‡ğ/RMINORZ
+CODE_SMELL
+|
+AX8A678un6OR0ua34lN3	java:S121#"Missing curly brace.(„£æÍüÿÿÿÿ2guillermo-roman-diez616508°Í®‡ğ/RCRITICALZ
+CODE_SMELL
+|
+AX8A678un6OR0ua34lN2	java:S121""Missing curly brace.(¡ĞÜÙÿÿÿÿÿ2guillermo-roman-diez616508°Í®‡ğ/RCRITICALZ
+CODE_SMELL
+|
+AX8A5qMqn6OR0ua34k8m	java:S121"Missing curly brace.(„£æÍüÿÿÿÿ2guillermo-roman-diez616508€œš‡ğ/RCRITICALZ
+CODE_SMELL
+Ò
+AX8A5qMqn6OR0ua34k8q
+java:S1319
+"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(îÖ¿2guillermo-roman-diez616508€œš‡ğ/RMINORZ
+CODE_SMELL

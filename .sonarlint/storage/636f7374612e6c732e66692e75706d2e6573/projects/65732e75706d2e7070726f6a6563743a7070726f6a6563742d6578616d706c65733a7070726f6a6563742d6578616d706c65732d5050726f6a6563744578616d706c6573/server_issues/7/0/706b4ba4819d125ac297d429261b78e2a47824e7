@@ -1,0 +1,57 @@
+×java"S121:CRITICALROPENZ 4b6ed8dcdc332e9c5187d2034d7ce86ebguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvf‚R
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.@×java"S121:CRITICALROPENZ 580f9c6d68a1efd92c94af001f837c43bguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvd‚R
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.5öjava"S139:MINORROPENZ a4486ea4352c1cede70f7ef80f643676bguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvb‚t
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.java6Move this trailing comment on the previous empty line.›java"S3012:MINORROPENZ ab8f2ab2a4a48a3ed1cc01dc73635e9bbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A0ycVn6OR0ua34kWI‚—
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaYUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.Z×java"S121:CRITICALROPENZ ca90a355b3559b0c422dd00e12b49d50bguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvl‚R
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.dújava"S1117:MAJORROPENZ 4d032d8d63f5a6bd2b30eedfedb7493fbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A0ycVn6OR0ua34kWK‚w
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.java8Rename "size" which hides the field declared at line 25.“íjava"S1905:MINORROPENZ fd0a03171514dccc09bd566ad905f626bguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A0ycVn6OR0ua34kWL‚j
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.java+Remove this unnecessary cast to "Object[]".”Øjava"S121:CRITICALROPENZ 5fb726ae689b9fe00a9b80fc0bb8e15bbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvu‚S
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.—Øjava"S121:CRITICALROPENZ 75e5b2c573b5fac261eb1167c8ed1bfbbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvr‚S
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.Øjava"S121:CRITICALROPENZ 4a6742294ff1b33c57727d66b095070dbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvv‚S
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.İjava"S1643:MINORROPENZ 75b97d7f943efb7558414a35d914d7f7bguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A0ycVn6OR0ua34kWP‚Z
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaUse a StringBuilder instead.hújava"S1117:MAJORROPENZ 4d032d8d63f5a6bd2b30eedfedb7493fbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A0ycVn6OR0ua34kWJ‚w
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.java8Rename "size" which hides the field declared at line 25.‹×java"S121:CRITICALROPENZ 4a6742294ff1b33c57727d66b095070dbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvk‚R
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.Y×java"S121:CRITICALROPENZ a3b571d6ef3f19cd3cb9b7c86f88a19dbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvg‚R
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.I×java"S121:CRITICALROPENZ 75b97d7f943efb7558414a35d914d7f7bguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvn‚R
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.h×java"S121:CRITICALROPENZ 2954e92a9b4d0e998fe4893f8141649abguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvm‚R
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.f×java"S121:CRITICALROPENZ 7d8ef178c77d60ffc935541980f53706bguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvp‚R
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.xİjava"S1643:MINORROPENZ c0fdf2d719d8c747fa1da849fb4920ffbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A0ycVn6OR0ua34kWN‚Z
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaUse a StringBuilder instead.eœjava"S2293:MINORROPENZ 2ab361ae83dac85aff6185fa2fafe03bbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A0ycVn6OR0ua34kWM‚˜
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaYReplace the type specification in this constructor call with the diamond operator ("<>").İjava"S1643:MINORROPENZ 9618781bde3ae013ba57525267109fadbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A0ycVn6OR0ua34kWO‚Z
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaUse a StringBuilder instead.gØjava"S121:CRITICALROPENZ fd0a03171514dccc09bd566ad905f626bguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvs‚S
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.”öjava"S139:MINORROPENZ 1c71cb69fd0c743111d16ce5df1e0faebguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kve‚t
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.java6Move this trailing comment on the previous empty line.<öjava"S139:MINORROPENZ 88c55fc022b81a82f73adc514a4820b4bguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvj‚t
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.java6Move this trailing comment on the previous empty line.V×java"S121:CRITICALROPENZ a3b571d6ef3f19cd3cb9b7c86f88a19dbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvh‚R
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.Nöjava"S139:MINORROPENZ 56845b84ffe199f044f7463e0d9fffebbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvi‚t
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.java6Move this trailing comment on the previous empty line.PØjava"S121:CRITICALROPENZ 75e5b2c573b5fac261eb1167c8ed1bfbbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvt‚S
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.•×java"S121:CRITICALROPENZ eff33171bb3ad82f6c9643fc0db08cc6bguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvo‚R
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.javaMissing curly brace.{öjava"S139:MINORROPENZ b27ea2f5ece4a17a51c6cf859a1af32dbguillermo-roman-diez61650h¸£Ì†ğ/r
+CODE_SMELLzAX8A2IIun6OR0ua34kvc‚t
+6src/main/java/es/upm/pproject/sonar/aed/LIFOArray.java6Move this trailing comment on the previous empty line.

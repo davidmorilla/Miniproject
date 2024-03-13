@@ -1,0 +1,45 @@
+¦java"S1319:MINORROPENZ 5a6ffff74c039355f89d8a00662b5279bguillermo-roman-diez61650h€œš‡ğ/r
+CODE_SMELLzAX8A5qMqn6OR0ua34k8r‚¢
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javadThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".
+java"S100:MINORROPENZ f6bc032d20f5a49802b5e7af537d7c7cbguillermo-roman-diez61650h°Í®‡ğ/r
+CODE_SMELLzAX8A678un6OR0ua34lNz‚Œ
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaNRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.×java"S121:CRITICALROPENZ 54d46d1466b6becfad9104683ab8e655bguillermo-roman-diez61650h€œš‡ğ/r
+CODE_SMELLzAX8A5qMqn6OR0ua34k8k‚R
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaMissing curly brace.×java"S121:CRITICALROPENZ 2954e92a9b4d0e998fe4893f8141649abguillermo-roman-diez61650h€œš‡ğ/r
+CODE_SMELLzAX8A5qMqn6OR0ua34k8n‚R
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaMissing curly brace.Ñjava"S2757:MAJORROPENZ 4226367b14b2debf8b3843c37d0f6e76bguillermo-roman-diez61650h€œš‡ğ/rBUGzAX8A5qMqn6OR0ua34k8o‚U
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaWas "+=" meant instead?×java"S121:CRITICALROPENZ d712e3163a55cb240f87e0734696e4aebguillermo-roman-diez61650h€œš‡ğ/r
+CODE_SMELLzAX8A5qMqn6OR0ua34k8m‚R
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaMissing curly brace.—java"S3776:CRITICALROPENZ 5a6ffff74c039355f89d8a00662b5279bguillermo-roman-diez61650h€œš‡ğ/r
+CODE_SMELLzAX8A5qMqn6OR0ua34k8j‚
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaRRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.
+ìjava"S1128:MINORROPENZ bb3900a63a8cecc1e79592e054915c97bguillermo-roman-diez61650h€œš‡ğ/r
+CODE_SMELLzAX8A5qMqn6OR0ua34k8p‚i
+6src/main/java/es/upm/pproject/sonar/sonarExamples.java+Remove this unused import 'java.util.List'.java"S100:MINORROPENZ 5a6ffff74c039355f89d8a00662b5279bguillermo-roman-diez61650h€œš‡ğ/r
+CODE_SMELLzAX8A5qMqn6OR0ua34k8i‚Œ
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaNRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.
+×java"S121:CRITICALROPENZ eda1519a9a1fd7ea8539438728937c1fbguillermo-roman-diez61650h€œš‡ğ/r
+CODE_SMELLzAX8A5qMqn6OR0ua34k8l‚R
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaMissing curly brace.³java"S1319:MINORROPENZ 5a6ffff74c039355f89d8a00662b5279bguillermo-roman-diez61650h€œš‡ğ/r
+CODE_SMELLzAX8A5qMqn6OR0ua34k8q‚¯
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaqThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".
+Ñjava"S2757:MAJORROPENZ 4226367b14b2debf8b3843c37d0f6e76bguillermo-roman-diez61650h°Í®‡ğ/rBUGzAX8A678un6OR0ua34lN5‚U
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaWas "+=" meant instead?&Ùcommon-java"DuplicatedBlocks:MAJORROPENbguillermo-roman-diez61650h°Í®‡ğ/r
+CODE_SMELLzAX8A678un6OR0ua34lNy‚f
+6src/main/java/es/upm/pproject/sonar/sonarExamples.java,2 duplicated blocks of code must be removed.×java"S121:CRITICALROPENZ 2954e92a9b4d0e998fe4893f8141649abguillermo-roman-diez61650h°Í®‡ğ/r
+CODE_SMELLzAX8A678un6OR0ua34lN4‚R
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaMissing curly brace.%³java"S1319:MINORROPENZ f6bc032d20f5a49802b5e7af537d7c7cbguillermo-roman-diez61650h°Í®‡ğ/r
+CODE_SMELLzAX8A678un6OR0ua34lN6‚¯
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaqThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".¦java"S1319:MINORROPENZ f6bc032d20f5a49802b5e7af537d7c7cbguillermo-roman-diez61650h°Í®‡ğ/r
+CODE_SMELLzAX8A678un6OR0ua34lN7‚¢
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javadThe type of "list" should be an interface such as "List" rather than the implementation "ArrayList".—java"S3776:CRITICALROPENZ f6bc032d20f5a49802b5e7af537d7c7cbguillermo-roman-diez61650h°Í®‡ğ/r
+CODE_SMELLzAX8A678un6OR0ua34lN0‚
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaRRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.×java"S121:CRITICALROPENZ 54d46d1466b6becfad9104683ab8e655bguillermo-roman-diez61650h°Í®‡ğ/r
+CODE_SMELLzAX8A678un6OR0ua34lN1‚R
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaMissing curly brace.!×java"S121:CRITICALROPENZ eda1519a9a1fd7ea8539438728937c1fbguillermo-roman-diez61650h°Í®‡ğ/r
+CODE_SMELLzAX8A678un6OR0ua34lN2‚R
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaMissing curly brace."java"S101:MINORROPENZ 201e8bdb36286f7a717282b51ec302f8bguillermo-roman-diez61650h€œš‡ğ/r
+CODE_SMELLzAX8A5qMqn6OR0ua34k8s‚‹
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaMRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.×java"S121:CRITICALROPENZ d712e3163a55cb240f87e0734696e4aebguillermo-roman-diez61650h°Í®‡ğ/r
+CODE_SMELLzAX8A678un6OR0ua34lN3‚R
+6src/main/java/es/upm/pproject/sonar/sonarExamples.javaMissing curly brace.#

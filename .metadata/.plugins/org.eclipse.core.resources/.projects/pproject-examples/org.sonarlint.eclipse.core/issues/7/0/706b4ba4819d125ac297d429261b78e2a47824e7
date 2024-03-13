@@ -1,0 +1,93 @@
+
+–
+AX8A2IIun6OR0ua34kvc	java:S139"6Move this trailing comment on the previous empty line.(«ãó¬2guillermo-roman-diez616508¸£Ì†ğ/RMINORZ
+CODE_SMELL
+|
+AX8A2IIun6OR0ua34kvp	java:S121x"Missing curly brace.(ñƒûüÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+|
+AX8A2IIun6OR0ua34kvm	java:S121f"Missing curly brace.(„¶áìøÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+}
+AX8A2IIun6OR0ua34kvr	java:S121"Missing curly brace.(ƒµöŒşÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+–
+AX8A2IIun6OR0ua34kve	java:S139<"6Move this trailing comment on the previous empty line.(´¼—2guillermo-roman-diez616508¸£Ì†ğ/RMINORZ
+CODE_SMELL
+š
+AX8A0ycVn6OR0ua34kWJ
+java:S1117‹"8Rename "size" which hides the field declared at line 25.(´Á2guillermo-roman-diez616508¸£Ì†ğ/RMAJORZ
+CODE_SMELL
+|
+AX8A2IIun6OR0ua34kvd	java:S1215"Missing curly brace.(…ØÃøûÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+w
+AX8A2IIun6OR0ua34kvf	java:S121@"Missing curly brace.(Ö¬ÏÉ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+š
+AX8A0ycVn6OR0ua34kWK
+java:S1117“"8Rename "size" which hides the field declared at line 25.(´Á2guillermo-roman-diez616508¸£Ì†ğ/RMAJORZ
+CODE_SMELL
+¿
+AX8A0ycVn6OR0ua34kWI
+java:S3012Z"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(Î„Ãìÿÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RMINORZ
+CODE_SMELL
+}
+AX8A2IIun6OR0ua34kvs	java:S121”"Missing curly brace.(ƒ°üÿÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+}
+AX8A2IIun6OR0ua34kvt	java:S121•"Missing curly brace.(ƒµöŒşÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+x
+AX8A2IIun6OR0ua34kvv	java:S121"Missing curly brace.(ÀÜ” 2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+}
+AX8A0ycVn6OR0ua34kWO
+java:S1643g"Use a StringBuilder instead.(ıØËÆ2guillermo-roman-diez616508¸£Ì†ğ/RMINORZ
+CODE_SMELL
+’
+AX8A0ycVn6OR0ua34kWL
+java:S1905”"+Remove this unnecessary cast to "Object[]".(ƒ°üÿÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RMINORZ
+CODE_SMELL
+|
+AX8A2IIun6OR0ua34kvg	java:S121I"Missing curly brace.(Š±ü—ıÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+|
+AX8A2IIun6OR0ua34kvh	java:S121N"Missing curly brace.(Š±ü—ıÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+–
+AX8A2IIun6OR0ua34kvb	java:S139"6Move this trailing comment on the previous empty line.(ÛŒ±2guillermo-roman-diez616508¸£Ì†ğ/RMINORZ
+CODE_SMELL
+–
+AX8A2IIun6OR0ua34kvi	java:S139P"6Move this trailing comment on the previous empty line.(¿«Œ˜2guillermo-roman-diez616508¸£Ì†ğ/RMINORZ
+CODE_SMELL
+›
+AX8A2IIun6OR0ua34kvj	java:S139V"6Move this trailing comment on the previous empty line.(‹â–ÿÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RMINORZ
+CODE_SMELL
+‚
+AX8A0ycVn6OR0ua34kWN
+java:S1643e"Use a StringBuilder instead.(†ûˆÂüÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RMINORZ
+CODE_SMELL
+w
+AX8A2IIun6OR0ua34kvo	java:S121{"Missing curly brace.(âÖÖÌ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+w
+AX8A2IIun6OR0ua34kvn	java:S121h"Missing curly brace.(ãˆÑŠ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+}
+AX8A2IIun6OR0ua34kvu	java:S121—"Missing curly brace.(½ŒÌùÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+À
+AX8A0ycVn6OR0ua34kWM
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÖÑºûÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RMINORZ
+CODE_SMELL
+}
+AX8A0ycVn6OR0ua34kWP
+java:S1643h"Use a StringBuilder instead.(ãˆÑŠ2guillermo-roman-diez616508¸£Ì†ğ/RMINORZ
+CODE_SMELL
+|
+AX8A2IIun6OR0ua34kvl	java:S121d"Missing curly brace.(¾Â¼Èûÿÿÿÿ2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
+w
+AX8A2IIun6OR0ua34kvk	java:S121Y"Missing curly brace.(ÀÜ” 2guillermo-roman-diez616508¸£Ì†ğ/RCRITICALZ
+CODE_SMELL
