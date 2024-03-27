@@ -38,7 +38,7 @@ public class EnrollmentManager {
 		}
 	}
 	
-	public void enroll(int course_code, int student_id) {
+	public void enroll(int course_code, int student_id) throws Exception {
 		if(students.get(student_id)!= null && courses.get(course_code)!=null) {
 			List<Student> students_enrolled = enrollment.get(course_code);
 			if(students_enrolled.size()<50) {
@@ -48,12 +48,12 @@ public class EnrollmentManager {
 					//exc ya esta matriculado en ese curso
 				}
 			} else {
-				//exc max 50 /curso
+				throw new FullCourseException();
 			}
 		} else if(students.get(student_id)== null) {
-			//exc el estudiante no existe
+			throw new MissingStudentException();
 		} else {
-			//exc el curso no existe
+			throw new MissingCourseException();
 		}
 	}
 		
@@ -84,14 +84,14 @@ public class EnrollmentManager {
 		return enrolled;
 	}
 
-    private List<Student> getStudentsEnrolledInCourse(int course) {
+    private List<Student> getStudentsEnrolledInCourse(int course) throws Exception {
     	if(courses.get(course)==null) {
-    		//exc
+    		throw new MissingCourseException();
     	}
        	return enrollment.get(course);
     }
     
-    private void cancelEnrollment(int course_code, int student_id) {
+    private void cancelEnrollment(int course_code, int student_id) throws Exception {
     	if(students.get(student_id)!= null && courses.get(course_code)!=null) {
     		List<Student> enrolled = enrollment.get(course_code);
 			if(isEnrolled(student_id, enrolled)) {
@@ -101,9 +101,9 @@ public class EnrollmentManager {
 				//exc no esta en el curso
 			}
 		} else if(students.get(student_id)== null) {
-			//exc el estudiante no existe
+			throw new MissingStudentException();
 		} else {
-			//exc el curso no existe
+			throw new MissingCourseException();
 		}
     }
     
