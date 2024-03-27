@@ -17,6 +17,9 @@ public class Student {
 		this.name = name;
 		this.email_address = email_address;
 	}
+	public int getId() {
+		return identification_number;
+	}
 	
 	
 }

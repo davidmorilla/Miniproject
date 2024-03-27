@@ -5,9 +5,9 @@ public class Course {
 	private String name;
 	private String coordinator;
 	
-	public Course(int code, String name, String coordinator) {
+	public Course(int code, String name, String coordinator) throws BlankInputException {
 		if(code <= 0 || name.isBlank() || coordinator.isBlank()) {
-			throw new BlankInputException("Error: code, name or coordinator cannot be blank");
+			throw new BlankInputException();
 		}
 		this.code = code;
 		this.name = name;
