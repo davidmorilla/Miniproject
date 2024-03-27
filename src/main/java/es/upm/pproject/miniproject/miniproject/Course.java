@@ -7,8 +7,7 @@ public class Course {
 	
 	public Course(int code, String name, String coordinator) {
 		if(code <= 0 || name.isBlank() || coordinator.isBlank()) {
-			//DEVOLVER EXCEPCION
-			System.out.println("Error: code, name, coordinator can not be blank");
+			throw new BlankInputException("Error: code, name or coordinator cannot be blank");
 		}
 		this.code = code;
 		this.name = name;
