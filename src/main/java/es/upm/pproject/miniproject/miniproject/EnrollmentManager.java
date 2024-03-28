@@ -17,7 +17,7 @@ public class EnrollmentManager {
 		enrollment= new HashMap<Integer, List<Student>>();
 	}
 	
-	public void registerCourse(int code, String name, String coordinator) {
+	public void registerCourse(int code, String name, String coordinator) throws CourseAlreadyExistsException {
 		if(courses.get(code)==null) {
 			try {
 				courses.put(code, new Course(code, name, coordinator));
@@ -26,26 +26,26 @@ public class EnrollmentManager {
 			}
 			enrollment.put(code, new ArrayList<Student>());	
 		}else {
-			// excepcion de que ya existe
+			throw new CourseAlreadyExistsException();
 		}
 	}
 	
-	public void registerStudent(int id, String name, String email) {
+	public void registerStudent(int id, String name, String email) throws StudentAlreadyExistsException {
 		if(students.get(id)==null) {
 			students.put(id, new Student(id, name, email));
 		}else {
-			//throw exc.
+			throw new StudentAlreadyExistsException();
 		}
 	}
 	
-	public void enroll(int course_code, int student_id) throws Exception {
+	public void enroll(int course_code, int student_id) throws StudentAlreadyEnrolledException, FullCourseException, MissingStudentException, MissingCourseException {
 		if(students.get(student_id)!= null && courses.get(course_code)!=null) {
 			List<Student> students_enrolled = enrollment.get(course_code);
 			if(students_enrolled.size()<50) {
 				if(!isEnrolled(student_id, students_enrolled)) {
 					sortedInsert(course_code, student_id, students_enrolled);
 				} else {
-					//exc ya esta matriculado en ese curso
+					throw new StudentAlreadyEnrolledException();
 				}
 			} else {
 				throw new FullCourseException();
@@ -84,21 +84,21 @@ public class EnrollmentManager {
 		return enrolled;
 	}
 
-    private List<Student> getStudentsEnrolledInCourse(int course) throws Exception {
+    private List<Student> getStudentsEnrolledInCourse(int course) throws MissingCourseException {
     	if(courses.get(course)==null) {
     		throw new MissingCourseException();
     	}
        	return enrollment.get(course);
     }
     
-    private void cancelEnrollment(int course_code, int student_id) throws Exception {
+    private void cancelEnrollment(int course_code, int student_id) throws StudentNotEnrolledException, MissingStudentException, MissingCourseException {
     	if(students.get(student_id)!= null && courses.get(course_code)!=null) {
     		List<Student> enrolled = enrollment.get(course_code);
 			if(isEnrolled(student_id, enrolled)) {
 				enrolled.remove(students.get(student_id));
 				enrollment.put(course_code, enrolled);
 			} else {
-				//exc no esta en el curso
+				throw new StudentNotEnrolledException();
 			}
 		} else if(students.get(student_id)== null) {
 			throw new MissingStudentException();
@@ -107,8 +107,12 @@ public class EnrollmentManager {
 		}
     }
     
-    private void restartCourse(int course_code) {
-    	enrollment.put(course_code, new ArrayList<Student>());
+    private void restartCourse(int course_code) throws MissingCourseException {
+    	if(courses.get(course_code) != null) {
+    		enrollment.put(course_code, new ArrayList<Student>());
+    	}else {
+    		throw new MissingCourseException();
+    	}
     }
     
     private Map<Integer, Student> getStudents() {
