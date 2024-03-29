@@ -17,20 +17,16 @@ public class EnrollmentManager {
 		enrollment= new HashMap<Integer, List<Student>>();
 	}
 	
-	public void registerCourse(int code, String name, String coordinator) throws CourseAlreadyExistsException {
+	public void registerCourse(int code, String name, String coordinator) throws CourseAlreadyExistsException, CourseBlankInputException {
 		if(courses.get(code)==null) {
-			try {
-				courses.put(code, new Course(code, name, coordinator));
-			} catch (BlankInputException e) {
-				e.printStackTrace();
-			}
+			courses.put(code, new Course(code, name, coordinator));
 			enrollment.put(code, new ArrayList<Student>());	
 		}else {
 			throw new CourseAlreadyExistsException();
 		}
 	}
 	
-	public void registerStudent(int id, String name, String email) throws StudentAlreadyExistsException {
+	public void registerStudent(int id, String name, String email) throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException {
 		if(students.get(id)==null) {
 			students.put(id, new Student(id, name, email));
 		}else {
@@ -84,14 +80,14 @@ public class EnrollmentManager {
 		return enrolled;
 	}
 
-    private List<Student> getStudentsEnrolledInCourse(int course) throws MissingCourseException {
+    public List<Student> getStudentsEnrolledInCourse(int course) throws MissingCourseException {
     	if(courses.get(course)==null) {
     		throw new MissingCourseException();
     	}
        	return enrollment.get(course);
     }
     
-    private void cancelEnrollment(int course_code, int student_id) throws StudentNotEnrolledException, MissingStudentException, MissingCourseException {
+    public void cancelEnrollment(int course_code, int student_id) throws StudentNotEnrolledException, MissingStudentException, MissingCourseException {
     	if(students.get(student_id)!= null && courses.get(course_code)!=null) {
     		List<Student> enrolled = enrollment.get(course_code);
 			if(isEnrolled(student_id, enrolled)) {
@@ -107,7 +103,7 @@ public class EnrollmentManager {
 		}
     }
     
-    private void restartCourse(int course_code) throws MissingCourseException {
+    public void restartCourse(int course_code) throws MissingCourseException {
     	if(courses.get(course_code) != null) {
     		enrollment.put(course_code, new ArrayList<Student>());
     	}else {
@@ -115,27 +111,11 @@ public class EnrollmentManager {
     	}
     }
     
-    private Map<Integer, Student> getStudents() {
+    public Map<Integer, Student> getStudents() {
     	return students;
     }
     
-    private Map<Integer, Course> getCourses() {
+    public Map<Integer, Course> getCourses() {
     	return courses;
-    }
-    
-       
-    
-    
-    
-    
-    
-    
-    
-    
-    
-	public static void main(String[] args) {
-    }
-    
-    
-    
+    }    
 }

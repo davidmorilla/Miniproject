@@ -4,14 +4,13 @@ public class Student {
 	private int identification_number;
 	private String name;
 	private String email_address;
-	public Student(int identification_number, String name, String email_address) {
+	
+	public Student(int identification_number, String name, String email_address) throws StudentBlankInputException, EmailFormatException {
 		if(identification_number <= 0 || name.isBlank() || email_address.isBlank()) {
-			//DEVOLVER EXCEPCION
-			System.out.println("Error: code, name, coordinator can not be blank");
+			throw new StudentBlankInputException();
 		}
 		else if(!email_address.contains("@") || email_address.endsWith(".")) {
-			//DEVOLVER EXCEPCION
-			System.out.println("Error: email must contain '@' and can not end with the character '.'");
+			throw new EmailFormatException();
 		}
 		this.identification_number = identification_number;
 		this.name = name;
@@ -20,6 +19,17 @@ public class Student {
 	public int getId() {
 		return identification_number;
 	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getEmail_address() {
+		return email_address;
+	}
+	
+	
+	
 	
 	
 }
