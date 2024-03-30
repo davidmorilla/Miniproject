@@ -5,11 +5,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class EnrollmentManager {
 	private Map<Integer, Course> courses;
 	private Map<Integer, Student> students;
 	private Map<Integer, List<Student>> enrollment;
+	
+	private static final Logger logger =
+			 LoggerFactory.getLogger(EnrollmentManager.class);
 	
 	public EnrollmentManager() {
 		courses= new TreeMap<Integer, Course>();
@@ -21,6 +26,7 @@ public class EnrollmentManager {
 		if(courses.get(code)==null) {
 			courses.put(code, new Course(code, name, coordinator));
 			enrollment.put(code, new ArrayList<Student>());	
+			logger.info("Course registered in the system");
 		}else {
 			throw new CourseAlreadyExistsException();
 		}
@@ -29,6 +35,7 @@ public class EnrollmentManager {
 	public void registerStudent(int id, String name, String email) throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException {
 		if(students.get(id)==null) {
 			students.put(id, new Student(id, name, email));
+			logger.info("Student registered in the system");
 		}else {
 			throw new StudentAlreadyExistsException();
 		}
@@ -40,6 +47,7 @@ public class EnrollmentManager {
 			if(students_enrolled.size()<50) {
 				if(!isEnrolled(student_id, students_enrolled)) {
 					sortedInsert(course_code, student_id, students_enrolled);
+					logger.info("Student enrolled in the course");
 				} else {
 					throw new StudentAlreadyEnrolledException();
 				}
@@ -84,6 +92,7 @@ public class EnrollmentManager {
     	if(courses.get(course)==null) {
     		throw new MissingCourseException();
     	}
+    	logger.info("Students enrolled in the course have been obtained");
        	return enrollment.get(course);
     }
     
@@ -93,6 +102,7 @@ public class EnrollmentManager {
 			if(isEnrolled(student_id, enrolled)) {
 				enrolled.remove(students.get(student_id));
 				enrollment.put(course_code, enrolled);
+				logger.info("The student's enrollment in the course has been cancelled");
 			} else {
 				throw new StudentNotEnrolledException();
 			}
@@ -106,16 +116,19 @@ public class EnrollmentManager {
     public void restartCourse(int course_code) throws MissingCourseException {
     	if(courses.get(course_code) != null) {
     		enrollment.put(course_code, new ArrayList<Student>());
+    		logger.info("The course has been restarted");
     	}else {
     		throw new MissingCourseException();
     	}
     }
     
     public Map<Integer, Student> getStudents() {
+    	logger.info("Students obtained");
     	return students;
     }
     
     public Map<Integer, Course> getCourses() {
+    	logger.info("Courses obtained");
     	return courses;
     }    
 }
