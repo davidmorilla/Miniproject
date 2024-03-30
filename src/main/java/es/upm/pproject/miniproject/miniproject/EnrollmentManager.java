@@ -28,6 +28,7 @@ public class EnrollmentManager {
 			enrollment.put(code, new ArrayList<Student>());	
 			logger.info("Course registered in the system");
 		}else {
+			logger.error("Course already registered in the system");
 			throw new CourseAlreadyExistsException();
 		}
 	}
@@ -37,6 +38,7 @@ public class EnrollmentManager {
 			students.put(id, new Student(id, name, email));
 			logger.info("Student registered in the system");
 		}else {
+			logger.error("Student already registered in the system");
 			throw new StudentAlreadyExistsException();
 		}
 	}
@@ -49,14 +51,18 @@ public class EnrollmentManager {
 					sortedInsert(course_code, student_id, students_enrolled);
 					logger.info("Student enrolled in the course");
 				} else {
+					logger.error("Student already enrolled in the course");
 					throw new StudentAlreadyEnrolledException();
 				}
 			} else {
+				logger.error("There are already 50 students enrolled in " + courses.get(course_code).getName() + ".");
 				throw new FullCourseException();
 			}
 		} else if(students.get(student_id)== null) {
+			logger.error("Student was not registered in the system");
 			throw new MissingStudentException();
 		} else {
+			logger.error("Course was not registered in the system");
 			throw new MissingCourseException();
 		}
 	}
@@ -90,6 +96,7 @@ public class EnrollmentManager {
 
     public List<Student> getStudentsEnrolledInCourse(int course) throws MissingCourseException {
     	if(courses.get(course)==null) {
+    		logger.error("Course was not registered in the system");
     		throw new MissingCourseException();
     	}
     	logger.info("Students enrolled in the course have been obtained");
@@ -104,11 +111,14 @@ public class EnrollmentManager {
 				enrollment.put(course_code, enrolled);
 				logger.info("The student's enrollment in the course has been cancelled");
 			} else {
+				logger.error("Student: "+ students.get(student_id).getName() +" was not enrolled in the course: " + courses.get(course_code).getName());
 				throw new StudentNotEnrolledException();
 			}
 		} else if(students.get(student_id)== null) {
+			logger.error("Student was not registered in the system");
 			throw new MissingStudentException();
 		} else {
+			logger.error("Course was not registered in the system");
 			throw new MissingCourseException();
 		}
     }
@@ -118,6 +128,7 @@ public class EnrollmentManager {
     		enrollment.put(course_code, new ArrayList<Student>());
     		logger.info("The course has been restarted");
     	}else {
+    		logger.error("Course was not registered in the system");
     		throw new MissingCourseException();
     	}
     }
@@ -126,7 +137,7 @@ public class EnrollmentManager {
     	logger.info("Students obtained");
     	return students;
     }
-    
+    logger.
     public Map<Integer, Course> getCourses() {
     	logger.info("Courses obtained");
     	return courses;
