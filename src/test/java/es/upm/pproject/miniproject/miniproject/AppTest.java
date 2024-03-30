@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
-
+import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -369,7 +369,7 @@ public class AppTest {
             man.registerStudent(1, "Student1", "student1@gmail.com");
             man.registerStudent(4, "Student4", "student4@gmail.com");
             man.registerStudent(2, "Student2", "student2@gmail.com");
-            ArrayList<Student> list= (ArrayList<Student>) man.getStudents();
+            ArrayList<Student> list= new ArrayList<Student>(man.getStudents());
 
             assertTrue(list.get(0).getId()<list.get(1).getId() && list.get(1).getId()<list.get(2).getId() && list.get(2).getId()<list.get(3).getId());
 
@@ -383,7 +383,7 @@ public class AppTest {
             man.registerCourse(1, "Course1", "Coord1");
             man.registerCourse(3, "Course3", "Coord3");
 
-            ArrayList<Course> list= (ArrayList<Course>) man.getCourses();
+            ArrayList<Course> list= new ArrayList<Course>(man.getCourses());
 
             assertTrue(list.get(0).getCode()<list.get(1).getCode() && list.get(1).getCode()<list.get(2).getCode() && list.get(2).getCode()<list.get(3).getCode());
 
