@@ -137,7 +137,7 @@ public class EnrollmentManager {
     	logger.info("Students obtained");
     	return students;
     }
-    logger.
+
     public Map<Integer, Course> getCourses() {
     	logger.info("Courses obtained");
     	return courses;
