@@ -133,13 +133,16 @@ public class EnrollmentManager {
     	}
     }
     
-    public Map<Integer, Student> getStudents() {
+    public Collection<Student> getStudents() {
     	logger.info("Students obtained");
-    	return students;
+    	
+    	return students.values();
     }
+    
+    public Collection<Course> getCourses() {
 
-    public Map<Integer, Course> getCourses() {
     	logger.info("Courses obtained");
-    	return courses;
+    	return courses.values();
     }    
 }
+
