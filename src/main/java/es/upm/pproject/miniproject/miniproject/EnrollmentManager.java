@@ -8,7 +8,7 @@ import java.util.TreeMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class EnrollmentManager {
+public class EnrollmentManager implements InterfaceEnrollmentManager{
 	private Map<Integer, Course> courses;
 	private Map<Integer, Student> students;
 	private Map<Integer, List<Student>> enrollment;
