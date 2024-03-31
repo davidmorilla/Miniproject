@@ -287,7 +287,7 @@ public class AppTest {
             man.registerStudent(1, "Student1", "student1@gmail.com");
             man.enroll(1, 1);
             man.cancelEnrollment(1, 1);
-            assertTrue(0 == man.getStudentsEnrolledInCourse(1).size());
+            assertEquals(0, man.getStudentsEnrolledInCourse(1).size());
         }
 
         @Test
@@ -302,7 +302,7 @@ public class AppTest {
             man.enroll(1, 3);
             man.enroll(1, 4);
             man.cancelEnrollment(1, 1);
-            assertTrue(3 == man.getStudentsEnrolledInCourse(1).size());
+            assertEquals(3, man.getStudentsEnrolledInCourse(1).size());
         }
 
         @Test
@@ -332,7 +332,6 @@ public class AppTest {
     class RestartCourseTests {
         @Test
         public void testRestartCourse() throws Exception {
-
             man.registerCourse(1, "Course1", "Coordinator1");
 
             man.registerStudent(1, "Student1", "student1@gmail.com");
@@ -347,13 +346,12 @@ public class AppTest {
 
             man.restartCourse(1);
 
-            assertTrue(0 == man.getStudentsEnrolledInCourse(1).size());
-            assertTrue(1 == man.getCourses().size());
+            assertEquals(0, man.getStudentsEnrolledInCourse(1).size());
+            assertEquals(1, man.getCourses().size());
         }
 
         @Test
         public void testMissingCourseException() throws Exception {
-
             assertThrows(MissingCourseException.class, () -> man.restartCourse(1));
         }
     }
@@ -362,8 +360,23 @@ public class AppTest {
     @Nested
     class GettersTests {
 
+    	@Test
+    	public void testStudentsListSize() throws Exception{
+            assertEquals(0, man.getStudents().size());
+    	}
+    	
+    	@Test
+    	public void testStudentsListSize2() throws Exception{
+    		man.registerStudent(3, "Student3", "student3@gmail.com");
+            man.registerStudent(1, "Student1", "student1@gmail.com");
+            man.registerStudent(4, "Student4", "student4@gmail.com");
+            man.registerStudent(2, "Student2", "student2@gmail.com");
+            
+            assertEquals(4, man.getStudents().size());
+    	}
+    	
         @Test
-        public void testGetStudents() throws Exception {
+        public void testGetStudentsOrdered() throws Exception {
 
             man.registerStudent(3, "Student3", "student3@gmail.com");
             man.registerStudent(1, "Student1", "student1@gmail.com");
@@ -371,12 +384,31 @@ public class AppTest {
             man.registerStudent(2, "Student2", "student2@gmail.com");
             ArrayList<Student> list= new ArrayList<Student>(man.getStudents());
 
-            assertTrue(list.get(0).getId()<list.get(1).getId() && list.get(1).getId()<list.get(2).getId() && list.get(2).getId()<list.get(3).getId());
+            assertTrue((list.get(0).getId()<list.get(1).getId()) && 
+            		   (list.get(1).getId()<list.get(2).getId()) && 
+            		   (list.get(2).getId()<list.get(3).getId()));
+
+        }
+        
+        @Test
+        public void testCoursesListSize() throws Exception{
+            assertEquals(0, man.getCourses().size());
+        }
+        
+        @Test
+        public void testCoursesListSize2() throws Exception{
+
+            man.registerCourse(4, "Course4", "Coord4");
+            man.registerCourse(2, "Course2", "Coord2");
+            man.registerCourse(1, "Course1", "Coord1");
+            man.registerCourse(3, "Course3", "Coord3");
+
+            assertEquals(4, man.getCourses().size());
 
         }
 
         @Test
-        public void testGetCourses() throws Exception{
+        public void testGetCoursesOrdered() throws Exception{
 
             man.registerCourse(4, "Course4", "Coord4");
             man.registerCourse(2, "Course2", "Coord2");
@@ -385,7 +417,9 @@ public class AppTest {
 
             ArrayList<Course> list= new ArrayList<Course>(man.getCourses());
 
-            assertTrue(list.get(0).getCode()<list.get(1).getCode() && list.get(1).getCode()<list.get(2).getCode() && list.get(2).getCode()<list.get(3).getCode());
+            assertTrue((list.get(0).getCode()<list.get(1).getCode()) && 
+            		   (list.get(1).getCode()<list.get(2).getCode()) &&
+            		   (list.get(2).getCode()<list.get(3).getCode()));
 
         }
     }
