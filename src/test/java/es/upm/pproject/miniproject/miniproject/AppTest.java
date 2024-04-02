@@ -20,6 +20,38 @@ public class AppTest {
 	void runBeforeEach () {
 		man = new EnrollmentManager();
 	}
+	
+	@DisplayName ("Tests related to testing the constructors of students and courses' objects")
+	@Nested
+	class ConstructorsTests {
+		@Test
+		public void testStudentConstructorId() throws StudentBlankInputException, EmailFormatException {
+			Student stu = new Student(1, "Student1", "email1@gmail.com");
+			assertEquals(1, stu.getId());
+		}
+		
+		@Test
+		public void testStudentConstructorAttributes() throws StudentBlankInputException, EmailFormatException {
+			Student stu = new Student(2, "Student2", "email2@gmail.com");
+			assertEquals("Student2", stu.getName());
+			assertEquals("email2@gmail.com", stu.getEmail_address());
+		}
+		
+		@Test
+		public void testCourseConstructorId() throws CourseBlankInputException {
+			Course co = new Course(1, "Course1", "Coordinator1");
+			assertEquals(1, co.getCode());
+		}
+		
+		@Test
+		public void testCourseConstructorAttributes() throws CourseBlankInputException {
+			Course co = new Course(2, "Course2", "Coordinator2");
+			assertEquals("Course2", co.getName());
+			assertEquals("Coordinator2", co.getCoordinator());
+		}
+	}
+	
+	
 
 	@DisplayName ("Tests related to registering courses in the system")
 	@Nested
