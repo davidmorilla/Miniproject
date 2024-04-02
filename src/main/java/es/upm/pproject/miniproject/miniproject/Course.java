@@ -6,7 +6,7 @@ public class Course {
 	private String coordinator;
 	
 	public Course(int code, String name, String coordinator) throws CourseBlankInputException {
-		if(code <= 0 || name.isBlank() || coordinator.isBlank()) {
+		if(code <= 0 || name.isBlank() || name.isEmpty()|| name==null|| coordinator.isBlank()|| coordinator.isEmpty()|| coordinator==null) {
 			throw new CourseBlankInputException();
 		}
 		this.code = code;

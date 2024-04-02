@@ -15,13 +15,36 @@ public class EnrollmentManager implements InterfaceEnrollmentManager{
 
     private static final Logger logger =
              LoggerFactory.getLogger(EnrollmentManager.class);
-
+    
+    
+    
+    /**
+     * This constructor creates an object of type EnrollmentManager that will take care of managing the database.
+     * 
+     */
     public EnrollmentManager() {
         courses= new TreeMap<Integer, Course>();
         students= new TreeMap<Integer, Student>();
         enrollment= new HashMap<Integer, List<Student>>();
     }
-
+    
+    /**
+     * {@summary It registers a new course.}
+     * @param code Specifies the unique course identifier. Must be a positive integer.
+     * @param name Specifies the title of the course.
+     * @param coordinator Specifies the name of the person coordinating the course.
+     * @throws CourseAlreadyExistsException when the course's code is already registered in the database.
+     * @throws CourseBlankInputException when any of the input parameters are blank or null or the code is not a positive integer.
+     * @implNote An example of use is provided below: 
+     * @implNote <li>{@code registerCourse(1, "Computer Science 101", "Coordinator 1")} will successfully register the course.
+     * @implNote <li>{@code registerCourse(1, "", "Coordinator 1")} will throw a {@code CourseBlankInputException()}.
+     * @implNote <li>{@code registerCourse(1, "Computer Science 101", null)} will throw a {@code CourseBlankInputException()}.
+     * @implNote <li>{@code registerCourse(-1, "Computer Science 101", "Coordinator 1")} will throw a {@code CourseBlankInputException()}.
+     * @implNote <li>{@code registerCourse(0, "Computer Science 101", "Coordinator 1")} will throw a {@code CourseBlankInputException()}.
+     * @implNote <li>{@code registerCourse(1, null, "Coordinator 1")} will throw a {@code CourseBlankInputException()}.
+     * @implNote <li>{@code registerCourse(1, " ", "Coordinator 1")} will throw a {@code CourseBlankInputException()}.
+     * @implNote <li>{@code registerCourse(1, "Computer Science 101", " ")} will throw a {@code CourseBlankInputException()}.
+     */
     public void registerCourse(int code, String name, String coordinator) throws CourseAlreadyExistsException, CourseBlankInputException {
         logger.info(String.format("\n--Resgistering course...\n\tCode: %d\n\tName: %s\n\tCoordinator: %s.", code, name, coordinator));
         if(courses.get(code)==null) {
@@ -29,7 +52,7 @@ public class EnrollmentManager implements InterfaceEnrollmentManager{
                 logger.info(String.format("\n\t----Creating course %d ...", code));
                 courses.put(code, new Course(code, name, coordinator));
             } catch(CourseBlankInputException cbie) {
-                logger.error("\n\t----CourseBlankInputException(): Can't create course. The call contains blank inputs.");
+                logger.error("\n\t----CourseBlankInputException(): Can't create course. The call contains blank or null inputs or the code is not a positive integer.");
                 throw new CourseBlankInputException();
             }
             logger.info(String.format("\n\t----Course %d successfully created.", code));
@@ -41,6 +64,28 @@ public class EnrollmentManager implements InterfaceEnrollmentManager{
         }
     }
 
+    /**
+     * {@summary It registers a new student.}
+     * @param id Specifies the unique student identifier. Must be a positive integer.
+     * @param name Specifies the student's name.
+     * @param email Specifies the student's e-mail address.
+     * @throws StudentAlreadyExistsException when the student's id or e-mail is already registered in the database.
+     * @throws StudentBlankInputException when any of the input parameters are blank or null or the id is not a positive integer.
+     * @throws EmailFormatException when the email ends with a '.' or does not contain '@'.
+     * @implNote An example of use is provided below: 
+     * @implNote <li>{@code registerStudent(1, "Student 1", "student1@example.com")} will successfully register the course.
+     * @implNote <li>{@code registerStudent(-1, "Student 1", "student1@example.com")} will throw a {@code StudentBlankInputException()}.
+     * @implNote <li>{@code registerStudent(0, "Student 1", "student1@example.com")} will throw a {@code StudentBlankInputException()}.
+     * @implNote <li>{@code registerStudent(1, "", "student1@example.com")} will throw a {@code StudentBlankInputException()}.
+     * @implNote <li>{@code registerStudent(1, "Student 1", "")} will throw a {@code StudentBlankInputException()}.
+     * @implNote <li>{@code registerStudent(1, " ", "student1@example.com")} will throw a {@code StudentBlankInputException()}.
+     * @implNote <li>{@code registerStudent(1, "Student 1", " ")} will throw a {@code StudentBlankInputException()}.
+     * @implNote <li>{@code registerStudent(1, null, "student1@example.com")} will throw a {@code StudentBlankInputException()}.
+     * @implNote <li>{@code registerStudent(1, "Student 1", null)} will throw a {@code StudentBlankInputException()}.
+     * @implNote <li>{@code registerStudent(1, "Student 1", "student1.example.com")} will throw an {@code EmailFormatException}.
+     * @implNote <li>{@code registerStudent(1, "Student 1", "student1@example.")} will throw an {@code EmailFormatException}.
+     * 
+     */
     public void registerStudent(int id, String name, String email) throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException {
         logger.info(String.format("\n--Registering student...\n\tIdentification: %d\n\tName: %s\n\tE-mail: %s.", id, name, email));
         if(students.get(id)==null) {
@@ -48,7 +93,7 @@ public class EnrollmentManager implements InterfaceEnrollmentManager{
                 logger.info(String.format("\n\t----Creating student %d ...", id));
                 students.put(id, new Student(id, name, email));
             } catch(StudentBlankInputException sbie) {
-                logger.error("\n\t----StudentBlankInputException(): Can't create student. The call contains blank inputs.");
+                logger.error("\n\t----StudentBlankInputException(): Can't create student. The call contains blank or null inputs or the id is not a positive integer.");
                 throw new StudentBlankInputException();
             } catch(EmailFormatException efe) {
                 logger.error("\n\t----EmailFormatException(): Can't register student. The e-mail is not in the correct format.");
@@ -61,7 +106,16 @@ public class EnrollmentManager implements InterfaceEnrollmentManager{
             throw new StudentAlreadyExistsException();
         }
     }
-
+	/**
+	 * {@summary It enrolls a student in a course.} 
+	 * @param course_code Specifies the unique course identifier of an already registered course.
+	 * @param student_id Specifies the unique student identifier of an already registered student.
+	 * @throws StudentAlreadyEnrolledException when the student is already enrolled in the course.
+	 * @throws FullCourseException when there are already 50 students enrolled in the course.
+	 * @throws MissingStudentException when the student's unique identifier is not registered in the database.
+	 * @throws MissingCourseException  when the course's unique code is not registered in the database.
+	 * @
+	 */
     public void enroll(int course_code, int student_id) throws StudentAlreadyEnrolledException, FullCourseException, MissingStudentException, MissingCourseException {
         logger.info(String.format("\n--Enrolling student...\n\tIdentification: %d\n\tin course:\n\tCode: %d.", student_id, course_code));
         if(students.get(student_id)!= null && courses.get(course_code)!=null) {
@@ -86,7 +140,12 @@ public class EnrollmentManager implements InterfaceEnrollmentManager{
             throw new MissingCourseException();
         }
     }
-
+    /**
+     * {@summary It enrolls a student in a course in a sorted way.}
+     * @param course_code Specifies the course's unique code.
+     * @param student_id Specifies the student's unique identifier.
+     * @param students_enrolled Specifies the list of students already enrolled in the course.
+     */
     private void sortedInsert(int course_code, int student_id, List<Student> students_enrolled) {
         int a = 0;
         int b = students_enrolled.size() - 1;
@@ -101,7 +160,12 @@ public class EnrollmentManager implements InterfaceEnrollmentManager{
         students_enrolled.add(a,students.get(student_id));
         enrollment.put(course_code, students_enrolled);
     }
-
+    /**
+     * 
+     * @param student_id Specifies the student's unique identifier.
+     * @param students_enrolled Specifies the list of students already enrolled in the course.
+     * @return <strong>true</strong> if the student is enrolled in the course and <strong>false</strong> otherwise.
+     */
     private boolean isEnrolled(int student_id, List<Student> students_enrolled) {
         boolean enrolled = false;
         int i = 0;
@@ -114,6 +178,9 @@ public class EnrollmentManager implements InterfaceEnrollmentManager{
         return enrolled;
     }
 
+    /**
+     * 
+     */
     public List<Student> getStudentsEnrolledInCourse(int course) throws MissingCourseException {
         logger.info(String.format("\n--Getting students enrolled in course %d ...", course ));
         if(courses.get(course)==null) {
