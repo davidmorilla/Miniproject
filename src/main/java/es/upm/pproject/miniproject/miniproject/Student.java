@@ -1,31 +1,38 @@
 package es.upm.pproject.miniproject.miniproject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Student {
-	private int identification_number;
+	private int identificationNumber;
 	private String name;
-	private String email_address;
+	private String emailAddress;
 	
-	public Student(int identification_number, String name, String email_address) throws StudentBlankInputException, EmailFormatException {
-		if(identification_number <= 0 || name.isBlank() || name.isEmpty()|| name==null || email_address.isBlank()|| email_address.isEmpty()|| email_address==null) {
+	private static final Logger logger = LoggerFactory.getLogger(Student.class);
+	
+	public Student(int identificationNumber, String name, String emailAddress) throws StudentBlankInputException, EmailFormatException {
+		if(identificationNumber <= 0 || name.isBlank() || emailAddress.isBlank()) {
+			logger.error("\n\t----StudentBlankInputException(): Can't create student. The call contains blank or null inputs or the id is not a positive integer.");
 			throw new StudentBlankInputException();
 		}
-		else if(!email_address.contains("@") || email_address.endsWith(".")) {
+		else if(!emailAddress.contains("@") || emailAddress.endsWith(".")) {
+			logger.error("\n\t----EmailFormatException(): Can't register student. The e-mail is not in the correct format.");
 			throw new EmailFormatException();
 		}
-		this.identification_number = identification_number;
+		this.identificationNumber = identificationNumber;
 		this.name = name;
-		this.email_address = email_address;
+		this.emailAddress = emailAddress;
 	}
 	public int getId() {
-		return identification_number;
+		return identificationNumber;
 	}
 	
 	public String getName() {
 		return name;
 	}
 	
-	public String getEmail_address() {
-		return email_address;
+	public String getEmailAddress() {
+		return emailAddress;
 	}
 	
 	

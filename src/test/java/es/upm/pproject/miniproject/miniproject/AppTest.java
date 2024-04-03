@@ -25,26 +25,26 @@ public class AppTest {
 	@Nested
 	class ConstructorsTests {
 		@Test
-		public void testStudentConstructorId() throws StudentBlankInputException, EmailFormatException {
+		void testStudentConstructorId() throws StudentBlankInputException, EmailFormatException {
 			Student stu = new Student(1, "Student1", "email1@gmail.com");
 			assertEquals(1, stu.getId());
 		}
 		
 		@Test
-		public void testStudentConstructorAttributes() throws StudentBlankInputException, EmailFormatException {
+		void testStudentConstructorAttributes() throws StudentBlankInputException, EmailFormatException {
 			Student stu = new Student(2, "Student2", "email2@gmail.com");
 			assertEquals("Student2", stu.getName());
-			assertEquals("email2@gmail.com", stu.getEmail_address());
+			assertEquals("email2@gmail.com", stu.getEmailAddress());
 		}
 		
 		@Test
-		public void testCourseConstructorId() throws CourseBlankInputException {
+		void testCourseConstructorId() throws CourseBlankInputException {
 			Course co = new Course(1, "Course1", "Coordinator1");
 			assertEquals(1, co.getCode());
 		}
 		
 		@Test
-		public void testCourseConstructorAttributes() throws CourseBlankInputException {
+		void testCourseConstructorAttributes() throws CourseBlankInputException {
 			Course co = new Course(2, "Course2", "Coordinator2");
 			assertEquals("Course2", co.getName());
 			assertEquals("Coordinator2", co.getCoordinator());
@@ -58,40 +58,40 @@ public class AppTest {
 	class RegisterCoursesTest {
 		
 		@Test
-		public void testBlankInput() {
+		void testBlankInput() {
 	        assertThrows(CourseBlankInputException.class, () -> man.registerCourse(1, "", "Coordinator1"));
 	    }
 		
 		@Test
-		public void testBlankInput2() {
+		void testBlankInput2() {
 	        assertThrows(CourseBlankInputException.class, () -> man.registerCourse(15632, "Course1", "  "));
 	    }
 		
 		@Test
-		public void testBlankInput3() {
+		void testBlankInput3() {
 	        assertThrows(CourseBlankInputException.class, () -> man.registerCourse(0, "Course1", "Coordinator1"));
 	    }
 		
 		@Test
-		public void testBlankInput4() {
+		void testBlankInput4() {
 	        assertThrows(CourseBlankInputException.class, () -> man.registerCourse(-123, "Course1", "Coordinator1"));
 	    }
 		
 		@Test
-	    public void testEmptyList() throws CourseAlreadyExistsException, CourseBlankInputException {
+		void testEmptyList() throws CourseAlreadyExistsException, CourseBlankInputException {
 	        man.registerCourse(1, "Course1", "Coordinator1");
 	        assertFalse(man.getCourses().isEmpty());
 	    }
 		
 		@Test
-		public void testRegisteredCourse() throws CourseAlreadyExistsException, CourseBlankInputException {
+		void testRegisteredCourse() throws CourseAlreadyExistsException, CourseBlankInputException {
 	        man.registerCourse(1, "Course1", "Coordinator1");
 	        assertThrows(CourseAlreadyExistsException.class, () -> man.registerCourse(1, "Course1", "Coordinator1"));
 	        assertThrows(CourseAlreadyExistsException.class, () -> man.registerCourse(1, "OtherName", "Coordinator1"));
 	    }
 		
 		@Test
-		public void testRegisterCourses() throws CourseAlreadyExistsException, CourseBlankInputException {
+		void testRegisterCourses() throws CourseAlreadyExistsException, CourseBlankInputException {
 			for(int i = 1; i <= 100; i++) {
 				man.registerCourse(i, "Course" + i, "Coordinator" + i);
 			}
@@ -104,39 +104,39 @@ public class AppTest {
 	class RegisterStudentsTest {
 		
 		@Test
-		public void testBlankInput() {
+		void testBlankInput() {
 	        assertThrows(StudentBlankInputException.class, () -> man.registerStudent(1, "", "student1@gmail.com"));
 	    }
 		
 		@Test
-		public void testBlankInput2() {
+		void testBlankInput2() {
 	        assertThrows(StudentBlankInputException.class, () -> man.registerStudent(100, "Student1", "  "));
 	    }
 		
 		@Test
-		public void testBlankInput3() {
+		void testBlankInput3() {
 	        assertThrows(StudentBlankInputException.class, () -> man.registerStudent(0, "Student1", "student1@gmail.com"));
 	    }
 		
 		@Test
-		public void testEmailFormat() {
+		void testEmailFormat() {
 	        assertThrows(EmailFormatException.class, () -> man.registerStudent(1, "Student1", "student1gmail.com"));
 	    }
 		
 		@Test
-		public void testEmailFormat2() {
+		void testEmailFormat2() {
 	        assertThrows(EmailFormatException.class, () -> man.registerStudent(1, "Student1", "student1@gmail."));
 	    }
 		
 		
 		@Test
-	    public void testEmptyList() throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException {
+		void testEmptyList() throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException {
 	        man.registerStudent(1, "Student1", "student1@gmail.com");
 	        assertFalse(man.getStudents().isEmpty());
 	    }
 		
 		@Test
-		public void testRegisteredStudent() throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException {
+		void testRegisteredStudent() throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException {
 	        man.registerStudent(1, "Student1", "student1@gmail.com");
 	        man.registerStudent(2, "Student2", "student2@gmail.com");
 	        man.registerStudent(3, "Student3", "student3@gmail.com");
@@ -145,7 +145,7 @@ public class AppTest {
 	    }
 		
 		@Test
-		public void testRegisterStudents() throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException {
+		void testRegisterStudents() throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException {
 			for(int i = 1; i <= 100; i++) {
 				man.registerStudent(i, "Student" + i, "Student" + i + "@gmail.com");
 			}
@@ -159,19 +159,19 @@ public class AppTest {
 	class EnrollTests {
 		
 		@Test
-		public void testStudentNotRegisteredBeforeEnroll() throws CourseAlreadyExistsException, CourseBlankInputException {
+		void testStudentNotRegisteredBeforeEnroll() throws CourseAlreadyExistsException, CourseBlankInputException {
 			man.registerCourse(1, "Course1", "Coordinator1");
 			assertThrows(MissingStudentException.class, () -> man.enroll(1, 1));
 		}
 		
 		@Test
-		public void testCourseNotRegisteredBeforeEnroll() throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException {
+		void testCourseNotRegisteredBeforeEnroll() throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException {
 			man.registerStudent(1, "Student1", "student1@gmail.com");
 			assertThrows(MissingCourseException.class, () -> man.enroll(1, 1));
 		}
 		
 		@Test
-		public void testEnrollSuccess() throws Exception {
+		void testEnrollSuccess() throws Exception {
 			man.registerCourse(1, "Course1", "Coordinator1");
 			man.registerStudent(1, "Student1", "student1@gmail.com");
 			man.enroll(1, 1);
@@ -180,7 +180,7 @@ public class AppTest {
 		}
 		
 		@Test
-		public void testEnrollSuccess2() throws Exception {
+		void testEnrollSuccess2() throws Exception {
 			man.registerCourse(1, "Course1", "Coordinator1");
 			
 			man.registerStudent(1, "Student1", "student1@gmail.com");
@@ -195,7 +195,7 @@ public class AppTest {
 		}
 		
 		@Test
-		public void testEnrollSuccess3() throws Exception {
+		void testEnrollSuccess3() throws Exception {
 			man.registerCourse(1, "Course1", "Coordinator1");
 			man.registerCourse(10, "Course10", "Coordinator10");
 			
@@ -214,7 +214,7 @@ public class AppTest {
 		}
 		
 		@Test
-		public void testMaxCapacity() throws Exception{
+		void testMaxCapacity() throws Exception{
 			man.registerCourse(100, "Course100", "Coordinator100");
 			int i;
 			for(i = 1; i <= 50; i++) {
@@ -226,7 +226,7 @@ public class AppTest {
 		}
 		
 		@Test
-		public void testExceptionCapacity() throws Exception{
+		void testExceptionCapacity() throws Exception{
 			man.registerCourse(100, "Course100", "Coordinator100");
 			int i;
 			for(i = 1; i <= 50; i++) {
@@ -239,7 +239,7 @@ public class AppTest {
 		}
 		
 		@Test
-		public void testEnrollDifferentCourses() throws Exception {
+		void testEnrollDifferentCourses() throws Exception {
 			man.registerStudent(1, "Student1", "student1@gmail.com");
 			man.registerCourse(1, "Course1", "Coordinator1");
 			man.registerCourse(2, "Course2", "Coordinator2");
@@ -252,7 +252,7 @@ public class AppTest {
 		}
 		
 		@Test
-		public void testEnrollTwice() throws Exception {
+		void testEnrollTwice() throws Exception {
 			man.registerStudent(1, "Student1", "student1@gmail.com");
 			man.registerCourse(1, "Course1", "Coordinator1");
 			
@@ -266,19 +266,19 @@ public class AppTest {
 	@Nested
 	class StudentsEnrolledInCourseTests {
 		@Test
-		public void testMissingCourseException() {
+		void testMissingCourseException() {
 			assertThrows(MissingCourseException.class, () -> man.getStudentsEnrolledInCourse(2121));
 		}
 		
 		@Test
-		public void testGetStudentsEnrolled() throws Exception {
+		void testGetStudentsEnrolled() throws Exception {
 			man.registerCourse(1, "Course1", "Coordinator1");
 			
 			assertEquals(0, man.getStudentsEnrolledInCourse(1).size());
 		}
 		
 		@Test
-		public void testGetStudentsEnrolled2() throws Exception {
+		void testGetStudentsEnrolled2() throws Exception {
 			man.registerCourse(1, "Course1", "Coordinator1");
 			man.registerStudent(1, "Student1", "student1@gmail.com");
 			
@@ -289,7 +289,7 @@ public class AppTest {
 		}
 		
 		@Test
-		public void testOrderedtudents() throws Exception {
+		void testOrderedtudents() throws Exception {
 			man.registerCourse(1, "Course1", "Coordinator1");
 			
 			man.registerStudent(1, "Student1", "student1@gmail.com");
@@ -314,7 +314,7 @@ public class AppTest {
     @Nested
     class CancelEnrollmentTests {
         @Test
-        public void testCancelEnrollment() throws Exception {
+        void testCancelEnrollment() throws Exception {
             man.registerCourse(1, "Course1", "Coordinator1");
             man.registerStudent(1, "Student1", "student1@gmail.com");
             man.enroll(1, 1);
@@ -323,7 +323,7 @@ public class AppTest {
         }
 
         @Test
-        public void testCancelEnrollment2() throws Exception {
+        void testCancelEnrollment2() throws Exception {
             man.registerCourse(1, "Course1", "Coordinator1");
             man.registerStudent(1, "Student1", "student1@gmail.com");
             man.registerStudent(2, "Student2", "student2@gmail.com");
@@ -338,20 +338,20 @@ public class AppTest {
         }
 
         @Test
-        public void testMissingCourseException() throws Exception {
+        void testMissingCourseException() throws Exception {
             man.registerStudent(1, "Student1", "student1@gmail.com");
 
             assertThrows(MissingCourseException.class, () -> man.cancelEnrollment(1, 1));
         }
 
         @Test
-        public void testMissingStudentException() throws Exception {
+        void testMissingStudentException() throws Exception {
             man.registerCourse(1, "Course1", "Coordinator1");
             assertThrows(MissingStudentException.class, () -> man.cancelEnrollment(1, 1));
         }
 
         @Test
-        public void testStudentNotEnrolledException() throws Exception {
+        void testStudentNotEnrolledException() throws Exception {
             man.registerCourse(1, "Course1", "Coordinator1");
             man.registerStudent(1, "Student1", "student1@gmail.com");
 
@@ -363,7 +363,7 @@ public class AppTest {
     @Nested
     class RestartCourseTests {
         @Test
-        public void testRestartCourse() throws Exception {
+        void testRestartCourse() throws Exception {
             man.registerCourse(1, "Course1", "Coordinator1");
 
             man.registerStudent(1, "Student1", "student1@gmail.com");
@@ -383,7 +383,7 @@ public class AppTest {
         }
 
         @Test
-        public void testMissingCourseException() throws Exception {
+        void testMissingCourseException() throws Exception {
             assertThrows(MissingCourseException.class, () -> man.restartCourse(1));
         }
     }
@@ -393,12 +393,12 @@ public class AppTest {
     class GettersTests {
 
     	@Test
-    	public void testStudentsListSize() throws Exception{
+    	void testStudentsListSize() throws Exception{
             assertEquals(0, man.getStudents().size());
     	}
     	
     	@Test
-    	public void testStudentsListSize2() throws Exception{
+    	void testStudentsListSize2() throws Exception{
     		man.registerStudent(3, "Student3", "student3@gmail.com");
             man.registerStudent(1, "Student1", "student1@gmail.com");
             man.registerStudent(4, "Student4", "student4@gmail.com");
@@ -408,7 +408,7 @@ public class AppTest {
     	}
     	
         @Test
-        public void testGetStudentsOrdered() throws Exception {
+        void testGetStudentsOrdered() throws Exception {
 
             man.registerStudent(3, "Student3", "student3@gmail.com");
             man.registerStudent(1, "Student1", "student1@gmail.com");
@@ -423,12 +423,12 @@ public class AppTest {
         }
         
         @Test
-        public void testCoursesListSize() throws Exception{
+        void testCoursesListSize() throws Exception{
             assertEquals(0, man.getCourses().size());
         }
         
         @Test
-        public void testCoursesListSize2() throws Exception{
+        void testCoursesListSize2() throws Exception{
 
             man.registerCourse(4, "Course4", "Coord4");
             man.registerCourse(2, "Course2", "Coord2");
@@ -440,7 +440,7 @@ public class AppTest {
         }
 
         @Test
-        public void testGetCoursesOrdered() throws Exception{
+        void testGetCoursesOrdered() throws Exception{
 
             man.registerCourse(4, "Course4", "Coord4");
             man.registerCourse(2, "Course2", "Coord2");

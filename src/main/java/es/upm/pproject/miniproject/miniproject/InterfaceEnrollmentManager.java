@@ -9,13 +9,13 @@ public interface InterfaceEnrollmentManager {
 	
 	public void registerStudent(int id, String name, String email) throws StudentAlreadyExistsException, StudentBlankInputException, EmailFormatException;
 
-	public void enroll(int course_code, int student_id) throws StudentAlreadyEnrolledException, FullCourseException, MissingStudentException, MissingCourseException;
+	public void enroll(int courseCode, int studentId) throws StudentAlreadyEnrolledException, FullCourseException, MissingStudentException, MissingCourseException;
 	
 	public List<Student> getStudentsEnrolledInCourse(int course) throws MissingCourseException;
 	
-	public void cancelEnrollment(int course_code, int student_id) throws StudentNotEnrolledException, MissingStudentException, MissingCourseException;
+	public void cancelEnrollment(int courseCode, int studentId) throws StudentNotEnrolledException, MissingStudentException, MissingCourseException;
 	
-	public void restartCourse(int course_code) throws MissingCourseException;
+	public void restartCourse(int courseCode) throws MissingCourseException;
 	
 	public Collection<Student> getStudents();
 	
