@@ -20,9 +20,9 @@ public class Student {
 	
     /**
      * {@summary It creates a new student.}
-     * @param id Specifies the unique student identifier. Must be a positive integer.
+     * @param identificationNumber Specifies the unique student identifier. Must be a positive integer.
      * @param name Specifies the student's name.
-     * @param email Specifies the student's e-mail address. It must contain a '@' and cannot end with a '.'.
+     * @param emailAddress Specifies the student's e-mail address. It must contain a '@' and cannot end with a '.'.
      * @throws StudentBlankInputException when any of the input parameters are blank or null or the id is not a positive integer.
      * @throws EmailFormatException when the email ends with a '.' or does not contain '@'.
      * <br><li> An example of use is provided below: 

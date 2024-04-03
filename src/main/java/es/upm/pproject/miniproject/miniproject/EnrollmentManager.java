@@ -147,8 +147,8 @@ public class EnrollmentManager implements InterfaceEnrollmentManager{
     }
 	/**
 	 * {@summary It enrolls a student in a course.} 
-	 * @param course_code Specifies the unique course identifier of an already registered course.
-	 * @param student_id Specifies the unique student identifier of an already registered student.
+	 * @param courseCode Specifies the unique course identifier of an already registered course.
+	 * @param studentId Specifies the unique student identifier of an already registered student.
 	 * @throws StudentAlreadyEnrolledException when the student is already enrolled in the course.
 	 * @throws FullCourseException when there are already 50 students enrolled in the course.
 	 * @throws MissingStudentException when the student's unique identifier is not registered in the database.
@@ -258,8 +258,8 @@ public class EnrollmentManager implements InterfaceEnrollmentManager{
     }
     /**
      * {@summary It cancels a student's enrollment in a course.}
-     * @param course_code Specifies the course's unique code.
-     * @param student_id Specifies the student's unique identifier.
+     * @param courseCode Specifies the course's unique code.
+     * @param studentId Specifies the student's unique identifier.
      * @throws StudentNotEnrolledException when the student is not enrolled in the course.
      * @throws MissingStudentException when the student is not registered in the system.
      * @throws MissingCourseException when the course is not registered in the system.
