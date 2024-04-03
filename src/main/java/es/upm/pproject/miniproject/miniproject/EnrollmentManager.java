@@ -8,6 +8,41 @@ import java.util.TreeMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The EnrollmentManager class is the only implementation of the interface with the same name. It facilitates the management of course enrollments and student registrations.
+ * It provides a set of methods to perform essential operations within the system, including registering
+ * courses and students, enrolling students in courses, canceling enrollments, restarting courses, and
+ * retrieving information about registered students and courses.
+ * 
+ * <p>EnrollmentManager acts as a centralized interface for administrators to interact with the system,
+ * ensuring efficient and reliable handling of course-related tasks. It encapsulates the core functionalities
+ * required for course and student management, promoting modularity and maintainability of the codebase.
+ * 
+ * <p>Key functionalities provided by EnrollmentManager include:
+ * <ul>
+ * <li>Registering Courses: Allows administrators to register new courses by providing unique identifiers,
+ * titles, and coordinator names.
+ * 
+ * <li>Registering Students: Enables the registration of new students with unique identifiers, names, and
+ * email addresses. It ensures that the email addresses are valid and unique.
+ * 
+ * <li>Enrolling Students: Facilitates the enrollment of students in courses, ensuring that each student
+ * can be enrolled in a course only once and that courses do not exceed their maximum capacity.
+ * 
+ * <li>Canceling Enrollments: Provides functionality to cancel a student's enrollment in a course,
+ * removing them from the course roster.
+ * 
+ * <li>Restarting Courses: Allows administrators to restart courses, canceling all active enrollments
+ * in the process and resetting the course to its initial state.
+ * 
+ * <li>Retrieving Student and Course Information: Offers methods to retrieve lists of all registered
+ * students and courses, enabling administrators to view and manage the system's data.
+ * </ul>
+ * 
+ * <p>EnrollmentManager ensures handling error conditions effectively. It utilizes exception handling mechanisms to communicate errors and
+ * failures, enabling robust error recovery and fault tolerance.
+ * 
+ */
 public class EnrollmentManager implements InterfaceEnrollmentManager{
     private Map<Integer, Course> courses;
     private Map<Integer, Student> students;
@@ -74,7 +109,7 @@ public class EnrollmentManager implements InterfaceEnrollmentManager{
      * {@summary It registers a new student.}
      * @param id Specifies the unique student identifier. Must be a positive integer.
      * @param name Specifies the student's name.
-     * @param email Specifies the student's e-mail address.
+     * @param email Specifies the student's e-mail address. It must contain a '@' and cannot end with a '.'.
      * @throws StudentAlreadyExistsException when the student's id or e-mail is already registered in the database.
      * @throws StudentBlankInputException when any of the input parameters are blank or null or the id is not a positive integer.
      * @throws EmailFormatException when the email ends with a '.' or does not contain '@'.
