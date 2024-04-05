@@ -95,9 +95,11 @@ Returns a list of all registered courses.
 
 To execute the test suite for the project, follow these steps:
 
-1. git clone [project_repository_url]
-2. cd miniproject
-3. mvn test
+``` bash
+git clone [project_repository_url]
+cd miniproject
+mvn test
+```
 
 ## Usage
 
