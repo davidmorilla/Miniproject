@@ -93,13 +93,13 @@ Returns a list of all registered courses.
 
 ## Running test suite
 
+To execute the test suite for the project, follow these steps:
+
 1. git clone [project_repository_url]
 2. cd miniproject
 3. mvn test
 
 ## Usage
-
-To use the provided functionalities, instantiate an object implementing the `InterfaceEnrollmentManager` interface and call the appropriate methods.
 
 To use the provided functionalities, instantiate an object implementing the `InterfaceEnrollmentManager` interface and call the appropriate methods.
 
