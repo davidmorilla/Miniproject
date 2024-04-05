@@ -40,7 +40,7 @@ public class Student {
      * 
      */
 	public Student(int identificationNumber, String name, String emailAddress) throws StudentBlankInputException, EmailFormatException {
-		if(identificationNumber <= 0 || name.isBlank() || emailAddress.isBlank()) {
+		if(name==null || emailAddress==null || identificationNumber <= 0 || name.isBlank() || emailAddress.isBlank()) {
 			logger.error("\n\t----StudentBlankInputException(): Can't create student. The call contains blank or null inputs or the id is not a positive integer.");
 			throw new StudentBlankInputException();
 		}

@@ -78,6 +78,15 @@ public class AppTest {
 	    }
 		
 		@Test
+		void testBlankInput5() {
+	        assertThrows(CourseBlankInputException.class, () -> man.registerCourse(1, null, "Coordinator1"));
+	    }
+		
+		@Test
+		void testBlankInput6() {
+	        assertThrows(CourseBlankInputException.class, () -> man.registerCourse(1, "Course1", null));
+	    }
+		@Test
 		void testEmptyList() throws CourseAlreadyExistsException, CourseBlankInputException {
 	        man.registerCourse(1, "Course1", "Coordinator1");
 	        assertFalse(man.getCourses().isEmpty());
@@ -116,6 +125,16 @@ public class AppTest {
 		@Test
 		void testBlankInput3() {
 	        assertThrows(StudentBlankInputException.class, () -> man.registerStudent(0, "Student1", "student1@gmail.com"));
+	    }
+		
+		@Test
+		void testBlankInput4() {
+	        assertThrows(StudentBlankInputException.class, () -> man.registerStudent(1, "Student1", null));
+	    }
+		
+		@Test
+		void testBlankInput5() {
+	        assertThrows(StudentBlankInputException.class, () -> man.registerStudent(1, null, "student1@gmail.com"));
 	    }
 		
 		@Test

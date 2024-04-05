@@ -7,7 +7,7 @@ This project has been implemented by **Iván Moratalla Rivera** and **David Mori
 ## Description
 
 The goal of this mini-project is the development of a Java program to manage the students that are
-matriculated in the different courses offered by a university.
+enrolled in the different courses offered by a university.
 
 ## Interface Description
 

@@ -35,7 +35,7 @@ public class Course {
      * <br><li> {@code new Course(1, "Computer Science 101", " ")} will throw a {@code CourseBlankInputException()}.
      */
 	public Course(int code, String name, String coordinator) throws CourseBlankInputException {
-		if(code <= 0 || name.isBlank() || coordinator.isBlank()) {
+		if(name == null || coordinator== null || code <= 0 || name.isBlank() || coordinator.isBlank()) {
 			logger.error("\n\t----CourseBlankInputException(): Can't create course. The call contains blank or null inputs or the code is not a positive integer.");
 			throw new CourseBlankInputException();
 		}
